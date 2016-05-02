@@ -11,6 +11,12 @@ if [[ $op = y ]]
 	sudo apt-get install tmux
 	cp tmux.conf ~/.tmux.conf 
 fi
+echo "git conf user name: "
+read user
+echo "git conf user mail: "
+read mail
+git config --global user.name $user
+git config --global user.mail $mail
 git config --global core.editor vim
 git config --global color.ui true
 git clone https://github.com/aalonso/vimrc.git ~/.vim
