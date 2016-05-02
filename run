@@ -8,7 +8,7 @@ sudo apt-get install vim git
 echo "enable Tmux"
 read op
 sudo apt-get install tmux
-if [[ $op = y ]]
+if [[ $op = 'y' ]]
 	cp tmux.conf ~/.tmux.conf 
 fi
 echo "git conf user name: "
