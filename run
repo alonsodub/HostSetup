@@ -8,7 +8,7 @@ sudo apt-get install vim git
 echo "enable Tmux"
 read op
 sudo apt-get install tmux
-if [[ $op = 'y' ]]
+if [[ $op = 'y' ]];then
 	cp tmux.conf ~/.tmux.conf 
 fi
 echo "git conf user name: "
@@ -35,7 +35,8 @@ git config --global push.default upstream
 git config --global merge.conflictstyle diff3
 echo "Restart Git Bash? --needed to changes take effect"
 read op 
-	if[[ op == 'y' ]]
-		exit
-		exit
+if[[ op == 'y' ]]; then
+		echo "exit"
+fi
+		
 	
