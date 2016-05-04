@@ -8,7 +8,7 @@ Ubuntu (Gnome)
 
 Set up 
 ===========================================
-git clone git.repo
+git clone https://github.com/alonsodub/HostSetup
 cd HostSetup/
 
 cp git-completion.bash ~/.git completion.bash                           
