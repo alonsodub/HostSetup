@@ -1,0 +1,45 @@
+Miguel Angel (alonsodub.wordpress.com)
+run
+#!/bin/bash
+
+echo "Host machine setup - Ubuntu"
+cp git-completion.bash .git-completion.bash                           
+cp git-prompt.sh .git-prompt.sh  
+sudo apt-get install build-essential
+sudo apt-get install vim git
+echo "enable Tmux"
+read op
+#sudo apt-get install tmux
+if [[ $op = 'y' ]];then
+	sudo apt-get install tmux
+	cp tmux.conf ~/.tmux.conf 
+fi
+echo "git conf user name: "
+read user
+echo "git conf user mail: "
+read mail
+git config --global user.name $user
+git config --global user.mail $mail
+git config --global core.editor vim
+git config --global color.ui true
+git clone https://github.com/aalonso/vimrc.git ~/.vim
+cd ~/.vim
+git submodule init 
+git submodule sync 
+git submoudle update 
+ln -s ~/.vim/vimrc .vim 
+sudo apt-get install bash-doc bash-completion
+cd ~
+echo "Terminal setup"
+#mv git-completion.bash .git-completion.bash
+#mv git-prompt.sh .git-prompt.sh
+cat bash_profile_course >> .bashrc
+git config --global push.default upstream
+git config --global merge.conflictstyle diff3
+echo "Restart Git Bash? --needed to changes take effect"
+read op 
+if [[ op == 'y' ]]; then
+		echo "exit"
+fi
+		
+	
