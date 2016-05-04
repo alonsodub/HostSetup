@@ -13,7 +13,7 @@ cd HostSetup/
 
 cp git-completion.bash ~/.git completion.bash                           
 cp git-prompt.sh ~/.git-prompt.sh  
-cat bash_profile_course >> .bashrc
+cat bash_profile_course >> ~/.bashrc
 
 sudo apt-get install build-essential
 sudo apt-get install vim git
